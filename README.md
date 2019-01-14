@@ -5,7 +5,9 @@
 
 This project simulates a cash register. A user is asked to enter an item amount. The user then enters the amount.
 
-The program will calculate the change returned by largest denomination. For example: 
+The program will calculate the change returned by largest denomination. 
+
+### For example: 
 *Cost of item .
 *100.
 *Tendered amount.
