@@ -1,8 +1,7 @@
 ## Make Change Project
 
-<p>
-    <img src="/MakeChange/images/register.jpeg" height="240" />
-</p>
+![](images/register.jpeg)
+
 
 This project simulates a cash register. A user is asked to enter an item amount. The user then enters the amount.
 
