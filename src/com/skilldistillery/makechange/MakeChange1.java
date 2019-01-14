@@ -10,7 +10,6 @@ public class MakeChange1 {
 		//conversion to pennies
 		int costInPennies = (int) price * 100;
 		int change = (int) (moneyTendered - costInPennies);
-		System.out.println("Change is " + change);	
 
 		if (change >= 2000) {
 			twenty = change / 2000;
@@ -69,16 +68,15 @@ public class MakeChange1 {
 		System.out.println("How much money was tedered from the customer ? ");
 		double moneyTendered = keyboard.nextDouble();
 
-		do {
+		while (moneyTendered < cost) {
 			System.out.println("Sorry thats less than the cost of the item, please try again");
-			break;
-
-		} while (moneyTendered < cost);
+			initialPrompt();
+		}
 
 		if (moneyTendered > cost) {
 			change =  moneyTendered - cost;
 			calculation.doCalculation(price, moneyTendered);
-			System.out.println("The change is " + change + "\n"  );
+			System.out.println("The change is " + change );
 		}
 		if (moneyTendered == cost) {
 			System.out.println("Thank you for the exact change ");
