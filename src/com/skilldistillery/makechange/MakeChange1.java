@@ -69,8 +69,16 @@ public class MakeChange1 {
 		double moneyTendered = keyboard.nextDouble();
 
 		while (moneyTendered < cost) {
-			System.out.println("Sorry thats less than the cost of the item, please try again");
-			initialPrompt();
+			Scanner retry = new Scanner(System.in);
+			
+			System.out.println("Sorry thats less than the cost of the item, please type Y try again");
+			String tryAgain = retry.next();
+			if(tryAgain.equalsIgnoreCase("y")) {
+				initialPrompt();
+			}
+			else {
+				break;
+			}
 		}
 
 		if (moneyTendered > cost) {
