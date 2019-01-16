@@ -3,14 +3,16 @@ package com.skilldistillery.makechange;
 import java.util.Scanner;
 
 public class MakeChange1 {
-	int dollar = 0, five  = 0, ten  = 0, twenty  = 0;
+	int dollar = 0, five = 0, ten = 0, twenty = 0;
 	int pennie = 0, dime = 0, quarter = 0, nickle = 0;
 
 	public double doCalculation(double price, double moneyTendered) {
-		//conversion to pennies
-		int costInPennies = (int) price * 100;
-		int change = (int) (moneyTendered - costInPennies);
+		// conversion to pennies
+		int costInPennies = (int) (price * 100);
+		int tenderedInPenneis = (int) (moneyTendered * 100);
+		int change = tenderedInPenneis - costInPennies;
 
+		System.out.println("Change :" + change);
 		if (change >= 2000) {
 			twenty = change / 2000;
 			change = change % 2000;
@@ -55,11 +57,11 @@ public class MakeChange1 {
 		return change;
 
 	}
-	
+
 	public void initialPrompt() {
 		Scanner keyboard = new Scanner(System.in);
 		double price = 0.0, change;
-		
+
 		MakeChange1 calculation = new MakeChange1();
 
 		System.out.println("Welcome to the store, how much was the item ?");
@@ -70,21 +72,20 @@ public class MakeChange1 {
 
 		while (moneyTendered < cost) {
 			Scanner retry = new Scanner(System.in);
-			
+
 			System.out.println("Sorry thats less than the cost of the item, please type Y try again");
 			String tryAgain = retry.next();
-			if(tryAgain.equalsIgnoreCase("y")) {
+			if (tryAgain.equalsIgnoreCase("y")) {
 				initialPrompt();
-			}
-			else {
+			} else {
 				break;
 			}
 		}
 
 		if (moneyTendered > cost) {
-			change =  moneyTendered - cost;
-			calculation.doCalculation(price, moneyTendered);
-			System.out.println("The change is " + change );
+			change = moneyTendered - cost;
+			calculation.doCalculation(cost, moneyTendered);
+			System.out.println("The change is " + change);
 		}
 		if (moneyTendered == cost) {
 			System.out.println("Thank you for the exact change ");
