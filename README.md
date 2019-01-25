@@ -14,7 +14,7 @@ The program will calculate the change returned by largest denomination.
 4. 110
 5. 1 one dollar bills
 6. 1 dimes.
-7. Change total is is 10.0
+7. Total change due is 10.0
 
 
 This is Week 1 [Skill Distillery](http://skilldistillery.com) weekend homework.
